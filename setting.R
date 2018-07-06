@@ -1,6 +1,9 @@
 ########################
 ###패키지 다운로드
 #출처 http://3months.tistory.com/291
+install.packages("dplyr")
+install.packages("gridExtra")
+install.packages("ggplot2")
 
 #데이터 로드
 library(xlsx)     #엑셀 read, write  
@@ -11,10 +14,10 @@ library(dplyr)
 library(tidyr)      #데이터셋 레이아웃을 바꿀 때 유용한 툴
 library(stringr)    #문자열 다루는 것과 정규 표현식 관련 패키지
 library(lubridate)  #date, time 더욱 쉽게 다루는 툴
-library(gridExtra)
 
 #데이터 시각화
 library(ggplot2)
+library(gridExtra)
 
 #데이터 모델링
 library(car)
@@ -58,12 +61,5 @@ crosswalk <- read.csv("./3. 교통 시설물 데이터/10_횡단보도 위치정
 hump <- read.csv("./3. 교통 시설물 데이터/11_험프 위치정보.csv", header=TRUE)
 #4. 기타 데이터
 #귀찮아서안함..
-
-
-
-
-
-
-
 
 
