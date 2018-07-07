@@ -6,20 +6,41 @@ class(accident$사고번호)
 class(accident)
 summary(accident)
 
-
-(accident$발생요일)
-
+#경찰청 데이터?
+#변수정의 찾아놓기?
+accident$발생요일
 table(accident$발생요일)
 table(accident$발생시군구)
 table(accident$사고내용)
 #경상사고, 부상신고사고, 사망사고, 중상사고
 table(accident$사고유형)
 table(accident$법규위반)
+#미분류, 기타 결측치 처리 어떻게 할 지 ?!
+#법규위반 어느 지점에서 발생했는지 확인
 table(accident$노면상태)
+#포장상태 분류기준 알기 ex 습기, 젖음/습기
 table(accident$기상상태)
-table(accident$피해운전자연령)
-class(accident$피해운전자연령)  #운전자 연령을 범주화 하는것이 좋을듯 10대, 20대, 30대
+#기상상태랑 노면상태 ....관계?
+table(accident$도로형태)
+#단일로-기타 (일반도로) , 기타- 기타 , 미분류 - 미분류
+#교차로 안/부근???  ->지도그려놓기(위치)
+#위치별로 사고 유형 파악
+table(accident$가해운전자차종)
+table(accident$가해운전자성별)
+table(accident$가해운전자연령)
+table(accident$가해운전자상해정도)
 
+table(accident$피해운전자차종)
+table(accident$피해운전자성별)
+table(accident$피해운전자연령)
+table(accident$피해운전자상해정도)
+
+#상해 없을 때 ?!연결해서도 분석하기..
+#사고유형 - 상해정도 (가해운전자, 피해운전자 종합해서) 
+#운전자 연령을 범주화 하는것이 좋을듯 10대, 20대, 30대
+
+
+#제안서에 결측치 처리 어떤식으로 할지 정ㄹ리
 
 
 p3<- ggplot(accident)+geom_bar(aes(발생요일), stat="count")+
