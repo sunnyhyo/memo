@@ -22,29 +22,32 @@ acc.heavy <- accident %>% filter(사고내용 =="중상사고")       #중상사
 
 
 #지도에 그리기
-g_m<-get_map('Yeongdeungpo-gu',zoom=14,maptype='roadmap')  #영등포구
-g_m<-get_map('Gangnam-gu',zoom=14,maptype='roadmap')       #강남구
-g_m<-get_map('Jung-gu',zoom=14,maptype='roadmap')         #중구
+g_m0<-get_map('Seoul', zoom = 13, maptype = 'roadmap')
+g_m1<-get_map('Yeongdeungpo-gu',zoom=14,maptype='roadmap')  #영등포구
+g_m2<-get_map('Gangnam-gu',zoom=14,maptype='roadmap')       #강남구
+g_m3<-get_map('Jung-gu',zoom=14,maptype='roadmap')         #중구
 
 
 #사고 내용별로 지도에 점찍기
-acc.accident <-ggmap(g_m,extent='device')+
+#지역구별로 g_m 숫자 바꾸면서 보면 ㄷ
+map.acc.accident <-ggmap(g_m0,extent='device')+
   geom_point(data=accident,aes(x=경도,y=위도),size=0.3,alpha=0.7,color='#980000') #전체사고
-acc.light<-ggmap(g_m,extent='device')+고
+map.acc.accident
+map.acc.light<-ggmap(g_m,extent='device')+고
   geom_point(data=acc.light,aes(x=경도,y=위도),size=0.3,alpha=0.7,color='#980000') #경상사고
-acc.injury<-ggmap(g_m,extent='device')+
+map.acc.injury<-ggmap(g_m,extent='device')+
   geom_point(data=acc.injury,aes(x=경도,y=위도),size=0.3,alpha=0.7,color='#980000') #부상신고사고
-acc.heavy<-ggmap(g_m,extent='device')+
+map.acc.heavy<-ggmap(g_m,extent='device')+
   geom_point(data=acc.heavy,aes(x=경도,y=위도),size=0.3,alpha=0.7,color='#980000') #중상사고
-acc.die<-ggmap(g_m,extent='device')+
+map.acc.die<-ggmap(g_m,extent='device')+
   geom_point(data=acc.die,aes(x=경도,y=위도),size=0.3,alpha=0.7,color='#980000')고 #사망사고
 #+ stat_density_2d(data=acc.die, aes(x=경도, y=위도,fill=..level.., alpha=..level..),geom='polygon',size=0.5,bins=20)
 
-accident
-acc.light
-acc.injury
-acc.heavy
-acc.die
+map.accident
+map.acc.light
+map.acc.injury
+map.acc.heavy
+map.acc.die
 
 
 

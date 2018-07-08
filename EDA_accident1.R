@@ -106,6 +106,7 @@ acc_p22<- ggplot(accident)+geom_bar(aes(피해운전자상해정도), stat="coun
 
 grid.arrange(acc_p3,acc_p4,acc_p5,acc_p10, ncol=2)
 grid.arrange(acc_p11,acc_p12,acc_p13,acc_p14, ncol=2)
+acc_p5
 
 acc_p10
 acc_p11
