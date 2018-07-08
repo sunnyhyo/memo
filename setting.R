@@ -4,11 +4,13 @@
 install.packages("dplyr")
 install.packages("gridExtra")
 install.packages("ggplot2")
+install.packages("xlsx")   #java 별도 설치 필요 링크: https://www.java.com/ko/download/windows-64bit.jsp
+install.packages("openxlsx")
 
 #데이터 로드
 library(xlsx)     #엑셀 read, write  
 library(foregin)  #SAS, SPSS 데이터셋 읽어올 때 사용
-
+library(openxlsx)
 #데이터 핸들링
 library(dplyr)  
 library(tidyr)      #데이터셋 레이아웃을 바꿀 때 유용한 툴
@@ -60,6 +62,14 @@ CCTV <- read.csv("./3. 교통 시설물 데이터/9_CCTV 위치정보.csv", head
 crosswalk <- read.csv("./3. 교통 시설물 데이터/10_횡단보도 위치정보.csv", header=TRUE)
 hump <- read.csv("./3. 교통 시설물 데이터/11_험프 위치정보.csv", header=TRUE)
 #4. 기타 데이터
-#귀찮아서안함..
+spot_roadSpeed <-read.csv("./4. 기타 데이터/1_도로 별 통행속도/(별첨) 링크 위치 정보.csv", header= TRUE)
+raw_roadSpeed <- read.xlsx("./4. 기타 데이터/1_도로 별 통행속도/2016년 도로 별 통행 속도.xlsx",sheet= 1, colNames=TRUE)
+roadSpeed <- merge(x= spot_roadSpeed, y=raw_roadSpeed, by="링크아이디")
 
+spot_roadTraffic <- read.csv("./4. 기타 데이터/2_도로 별 교통량/(별첨) 교통량 지점정보.csv", header=TRUE)
+raw_roadTraffic <-  read.xlsx("./4. 기타 데이터/2_도로 별 교통량/2016년 도로 별 교통량.xlsx", sheet=1, colNames =TRUE)
+roadTraffic <- merge(x=spot_roadTraffic, y=raw_roadTraffic, by="지점번호")
 
+#csv로 작성
+write.csv(roadSpeed, "./4. 기타 데이터/1_도로 별 통행속도/도로별 통행속도와 위치.csv")
+write.csv(roadTraffic, "./4. 기타 데이터/2_도로 별 교통량/도로별 교통량 위치.csv")
