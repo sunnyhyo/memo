@@ -29,7 +29,7 @@ g_m3<-get_map('Jung-gu',zoom=14,maptype='roadmap')         #중구
 
 
 #사고 내용별로 지도에 점찍기
-#지역구별로 g_m 숫자 바꾸면서 보면 ㄷ
+#지역구별로 g_m 숫자 바꾸면서 보면 됨
 map.acc.accident <-ggmap(g_m0,extent='device')+
   geom_point(data=accident,aes(x=경도,y=위도),size=0.3,alpha=0.7,color='#980000') #전체사고
 map.acc.accident
