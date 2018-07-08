@@ -37,12 +37,13 @@ cor(DGT$Vx, DGT$Vy)
 
 ##########
 #행추출
-
+a_speeding  <- 
+a_longSpeeding  <- 
 
 b_urgStart<- DGT %>% filter(speed <= 5 & Vx >10 | Vy >10 )  #급출발  (아마도...) 
 #가속도 정의 잘모름...
 
-
+c_urgStop <- DGT %>% filter(vx < 0 | Vy<0 & )
 
 
 
