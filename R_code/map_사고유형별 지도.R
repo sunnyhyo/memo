@@ -50,19 +50,19 @@ g_m3<-get_map('Jung-gu',zoom=14,maptype='roadmap')         #중구
 #사고 내용별로 지도에 점찍기
 #지역구별로 g_m 숫자 바꾸면서 보면 됨
 map.acc0   <- ggmap(g_m0, extent = 'device') +
-  geom_point(data=acc.onlycar, aes(x=경도,y=위도),size=0.3,alpha=0.7,color='yellow')+  #차대차(노랑)
+  geom_point(data=acc.onlycar, aes(x=경도,y=위도),size=0.3,alpha=0.7,color='yellow')+  #차량단독(노랑)
   geom_point(data=acc.carperson, aes(x=경도,y=위도),size=0.3,alpha=0.7,color='red')+  #차대사람(빨강)
   geom_point(data=acc.carcar, aes(x=경도,y=위도),size=0.3,alpha=0.7,color='blue')     #차대차(파랑)
 map.acc1   <- ggmap(g_m1, extent = 'device') +
-  geom_point(data=acc.onlycar, aes(x=경도,y=위도),size=0.3,alpha=0.7,color='yellow')+  #차대차(노랑)
+  geom_point(data=acc.onlycar, aes(x=경도,y=위도),size=0.3,alpha=0.7,color='yellow')+  #차량단독(노랑)
   geom_point(data=acc.carperson, aes(x=경도,y=위도),size=0.3,alpha=0.7,color='red')+  #차대사람(빨강)
   geom_point(data=acc.carcar, aes(x=경도,y=위도),size=0.3,alpha=0.7,color='blue')     #차대차(파랑)
 map.acc2   <- ggmap(g_m2, extent = 'device') +
-  geom_point(data=acc.onlycar, aes(x=경도,y=위도),size=0.3,alpha=0.7,color='yellow')+  #차대차(노랑)
-  geom_point(data=acc.carperson, aes(x=경도,y=위도),size=0.3,alpha=0.7,color='red')+  #차대사람(빨강)
-  geom_point(data=acc.carcar, aes(x=경도,y=위도),size=0.3,alpha=0.7,color='blue')     #차대차(파랑)
+  #geom_point(data=acc.onlycar, aes(x=경도,y=위도),size=0.3,alpha=0.7,color='yellow')+  #차량단독(노랑)
+  geom_point(data=acc.carperson, aes(x=경도,y=위도),size=0.3,alpha=0.7,color='red') #+  #차대사람(빨강)
+  #geom_point(data=acc.carcar, aes(x=경도,y=위도),size=0.3,alpha=0.7,color='blue')     #차대차(파랑)
 map.acc3   <- ggmap(g_m3, extent = 'device') +
-  geom_point(data=acc.onlycar, aes(x=경도,y=위도),size=0.3,alpha=0.7,color='yellow')+  #차대차(노랑)
+  geom_point(data=acc.onlycar, aes(x=경도,y=위도),size=0.3,alpha=0.7,color='yellow')+  #차량단ㄷ(노랑)
   geom_point(data=acc.carperson, aes(x=경도,y=위도),size=0.3,alpha=0.7,color='red')+  #차대사람(빨강)
   geom_point(data=acc.carcar, aes(x=경도,y=위도),size=0.3,alpha=0.7,color='blue')     #차대차(파랑)
 
