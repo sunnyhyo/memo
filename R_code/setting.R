@@ -35,7 +35,7 @@ library(zoo)
 ###경로 설정
 getwd()
 setwd("C:/rfolder/제16회SAS분석챔피언십_샘플 데이터")  #본인 저장위치로 변경
-
+setwd("C:/Users/HS/Documents/GitHub/제16회SAS분석챔피언십_샘플 데이터")  #효선
 
 #######################
 ###데이터 읽어들이기

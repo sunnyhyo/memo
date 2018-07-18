@@ -1,6 +1,3 @@
-#송종우 교수님 데이터마이닝 수업자료
-#출처: 송종우 교수님 홈페이지 http://home.ewha.ac.kr/~josong/dmgrad/index.html
-
 
 # Chapter 2 Lab: Introduction to R
 
